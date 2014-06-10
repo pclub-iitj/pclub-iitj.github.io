@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Programming Club, IIT Jodhpur]]></title>
   <link href="http://pclub-iitj.github.io/atom.xml" rel="self"/>
   <link href="http://pclub-iitj.github.io/"/>
-  <updated>2014-06-10T11:11:51+02:00</updated>
+  <updated>2014-06-10T11:18:38+02:00</updated>
   <id>http://pclub-iitj.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Programming Club, IIT Jodhpur]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
