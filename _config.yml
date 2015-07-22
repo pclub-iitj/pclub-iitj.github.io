@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://rohilsurana.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://pclub-iitj.github.io
+title: Programming Club, IIT Jodhpur
+subtitle: Code never lies, comments sometimes do
+author: PClub-IITJ
 simple_search: https://www.google.com/search
-description:
+description: Here you can find all the information regarding Programming Club of IIT Jodhpur and its members.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -64,7 +64,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
+github_user: pclub-iitj
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
@@ -87,15 +87,16 @@ pinboard_user:
 pinboard_count: 3
 
 # Delicious
-delicious_user:
+delicious_user: 
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: pclub-iitj
 disqus_show_comment_count: false
 
 # Google Analytics
 google_analytics_tracking_id:
 
 # Facebook Like
+facebook_page: http://www.facebook.com/pclub.iitj
 facebook_like: false
