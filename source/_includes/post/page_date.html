@@ -1,0 +1,5 @@
+{% if page.date %}{% capture time %}{{ page.date | date: "%B %-d, %Y" }}{% endcapture %}{% endif %}
+{% if post.date %}{% capture time %}{{ post.date | date: "%B %-d, %Y" }}{% endcapture %}{% endif %}
+
+{% if page.updated %}{% capture updated %}{{ page.updated | date: "%B %-d, %Y" }}{% endcapture %}{% endif %}
+{% if post.updated %}{% capture updated %}{{ post.updated | date: "%B %-d, %Y" }}{% endcapture %}{% endif %}
