@@ -21,9 +21,13 @@ source_dir      = "source"    # source file directory
 blog_index_dir  = 'source/blog'    # directory for your blog's index page (if you put your index in source/blog/index.html, set this to 'source/blog')
 deploy_dir      = "_deploy"   # deploy directory (for Github pages deployment)
 stash_dir       = "_stash"    # directory to stash posts for speedy generation
-posts_dir       = "_posts"    # directory for blog files
+posts_dir       = "_posts"    # directory for blog posts
+news_dir       = "_news"    # directory for blog news
+wow_dir       = "_wow"    # directory for words of wisdom
 themes_dir      = ".themes"   # directory for blog files
 new_post_ext    = "markdown"  # default new post file extension when using the new_post task
+new_news_ext    = "markdown"  # default new news file extension when using the new_news task
+new_wow_ext    = "markdown"  # default new news file extension when using the new_news task
 new_page_ext    = "markdown"  # default new page file extension when using the new_page task
 server_port     = "4000"      # port for preview server eg. localhost:4000
 
@@ -155,6 +159,56 @@ task :new_page, :filename do |t, args|
     end
   else
     puts "Syntax error: #{args.filename} contains unsupported characters"
+  end
+end
+
+# usage rake new_news[my-new-news] or rake new_news['my new news'] or rake new_news (defaults to "new-news")
+desc "Begin a new news artcle in #{source_dir}/#{news_dir}"
+task :new_news, :title do |t, args|
+  if args.title
+    title = args.title
+  else
+    title = get_stdin("Enter a title for your news: ")
+  end
+  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  mkdir_p "#{source_dir}/#{news_dir}"
+  filename = "#{source_dir}/#{news_dir}/#{title.to_url}.#{new_news_ext}"
+  if File.exist?(filename)
+    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+  end
+  puts "Creating new news: #{filename}"
+  open(filename, 'w') do |news|
+    news.puts "---"
+    news.puts "layout: page"
+    news.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+    news.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %z')}"
+    news.puts "comments: true"
+    news.puts "---"
+  end
+end
+
+# usage rake new_wow[my-name] or rake new_wow['my name'] or rake new_wow (defaults to "new-senior")
+desc "Begin your words of wisdom  in #{source_dir}/#{wow_dir}"
+task :new_wow, :name do |t, args|
+  if args.name
+    name = args.name
+  else
+    name = get_stdin("Enter your name: ")
+  end
+  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  mkdir_p "#{source_dir}/#{wow_dir}"
+  filename = "#{source_dir}/#{wow_dir}/#{name.to_url}.#{new_wow_ext}"
+  if File.exist?(filename)
+    abort("rake aborted!") if ask("You may have already added some words or someone with same  has added some words. Do you want to overwrite?", ['y', 'n']) == 'n'
+  end
+  puts "Creating new words from you: #{filename}"
+  open(filename, 'w') do |wow|
+    wow.puts "---"
+    wow.puts "layout: page"
+    wow.puts "author: \"#{name.gsub(/&/,'&amp;')}\""
+    wow.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %z')}"
+    wow.puts "comments: true"
+    wow.puts "---"
   end
 end
 

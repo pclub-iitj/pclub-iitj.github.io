@@ -1,8 +1,12 @@
 ---
 layout: page
 title: "Words of Wisdom"
-date: 2015-07-23 12:24
-comments: true
 sharing: true
 footer: true
 ---
+
+{% for wow in site.wow %}
+>{{ wow.content }}
+<span class="byline author vcard">-- <span class="fn">{% if wow.author %}{{ wow.author }}{% else %}{{ "Anonymous" }}{% endif %}</span></span>
+<hr>
+{% endfor %}
