@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://pclub-iitj.github.io/</loc>
+  </url>
+  <url>
     <loc>http://pclub-iitj.github.io/blog/archives/</loc>
   </url>
   <url>
     <loc>http://pclub-iitj.github.io/blog/</loc>
   </url>
   <url>
+    <loc>http://pclub-iitj.github.io/cells/</loc>
+  </url>
+  <url>
     <loc>http://pclub-iitj.github.io/about/</loc>
   </url>
   <url>
     <loc>http://pclub-iitj.github.io/wow/</loc>
-  </url>
-  <url>
-    <loc>http://pclub-iitj.github.io/</loc>
   </url>
 </urlset>
